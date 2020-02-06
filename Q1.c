@@ -33,13 +33,13 @@ int main()
 	i = 4;						//Not relvent
 		//So what we got now is head->temp <-> temp1
 	mat[head->num%2][head->next->num%2] =3;	//First mat[head->num is 8 with %2 will become 0] second part [head->next (temp) -> num%2 that is 6 so will be 0] so end of this is mat[0][0] = 3
-	*((*mat + head->num/4) + 1) = 2;		//mat in first row + head->num (8)/4 = 2 so result is mat[0][2]=2
+	*((*mat + head->num/4) + 1) = 2;		//mat in the first row + 8/2 (head->num = 8) go to the third cell in the first row ([0][2]) then we add 1 to that, so it will go to the next one (*[0] [2]+1 = [0][3]=[1][0])
 	*(mat[(head -> next->next->next->next->num)/4] +1) =4;	//mat[head->temp->temp1->temp->temp1->num (3) /4 so that will be 0 +1 end is 1 so the final result on this is that mat[1][0]=4
 	for (i = 0; i < 2; i++)
 	{
-		for (j=0; j<2; j++)
+		for (j=0; j<2; j++)			//Loop only go up to 1 so it will print [0][0],[0][1],[1][0],[1][1]
 		{
-			printf("%d ", mat[i][j] );	//Final print "3 0 2 4 " (without the "") (not sure why honstly should have done "3 0 2 4 0 0 0 0 0 " without the quotes but visual stduio says that is the output
+			printf("%d ", mat[i][j] );	//Final print "3 0 2 4 " (without the "")
 		}
 	}
 	return 0;
