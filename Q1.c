@@ -29,12 +29,12 @@ int main()
 	NODE* templ = (NODE*)malloc(sizeof(NODE));	//Create a pointer for type NODE made in mermmory and put it into temp1
 	templ->num=3;
 	temp->next= templ;
-	head->next->next = temp;	//Linking temp1 to temp
+	head->next->next = temp;	//Linking temp to it self
 	i = 4;						//Not relvent
-		//So what we got now is head->temp <-> temp1
+		//So what we got now is head->temp <- temp
 	mat[head->num%2][head->next->num%2] =3;	//First mat[head->num is 8 with %2 will become 0] second part [head->next (temp) -> num%2 that is 6 so will be 0] so end of this is mat[0][0] = 3
 	*((*mat + head->num/4) + 1) = 2;		//mat in the first row + 8/2 (head->num = 8) go to the third cell in the first row ([0][2]) then we add 1 to that, so it will go to the next one (*[0] [2]+1 = [0][3]=[1][0])
-	*(mat[(head -> next->next->next->next->num)/4] +1) =4;	//mat[head->temp->temp1->temp->temp1->num (6) /4 so that will be 1 end is 1 so the final result on this is that mat[1][1]=4
+	*(mat[(head -> next->next->next->next->num)/4] +1) =4;	//mat[head->temp->temp->temp->temp->num (6) /4 so that will be 1 end is 1 so the final result on this is that mat[1][1]=4
 	for (i = 0; i < 2; i++)
 	{
 		for (j=0; j<2; j++)			//Loop only go up to 1 so it will print [0][0],[0][1],[1][0],[1][1]
